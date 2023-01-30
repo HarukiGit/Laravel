@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 14, in <module>
+    loca=gs.gSheet()
+  File "/home/pi/switchbot/homeControl/google_sheets.py", line 24, in gSheet
+    return worksheet.acell('A1').value
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/worksheet.py", line 225, in acell
+    return self.cell(
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/worksheet.py", line 252, in cell
+    data = self.get(
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/utils.py", line 702, in wrapper
+    return f(*args, **kwargs)
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/worksheet.py", line 820, in get
+    response = self.spreadsheet.values_get(range_name, params=params)
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/spreadsheet.py", line 182, in values_get
+    r = self.client.request("get", url, params=params)
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/client.py", line 92, in request
+    raise APIError(response)
+gspread.exceptions.APIError: {'code': 503, 'message': 'The service is currently unavailable.', 'status': 'UNAVAILABLE'}

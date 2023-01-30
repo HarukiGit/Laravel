@@ -1,0 +1,58 @@
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 13, in <module>
+    f.write(str(datetime.datetime.now())+' enter\n')
+NameError: name 'datetime' is not defined
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 13, in <module>
+    f.write(str(datetime.datetime.now())+' enter\n')
+NameError: name 'datetime' is not defined
+  File "/home/pi/switchbot/homeControl/main.py", line 27
+    else if (temp>=22 and t_upflag==True):
+         ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 33, in <module>
+    humidifier.on()
+NameError: name 'humidifier' is not defined
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 37, in <module>
+    humidifier.off()
+NameError: name 'humidifier' is not defined
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 37, in <module>
+    humidifier.off()
+NameError: name 'humidifier' is not defined
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 21, in <module>
+    hum=ther.hum()
+  File "/home/pi/switchbot/homeControl/thermometer.py", line 21, in hum
+    return(int(data['body']['humidity']))
+KeyError: 'body'
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 14, in <module>
+    loca=gs.gSheet()
+  File "/home/pi/switchbot/homeControl/google_sheets.py", line 22, in gSheet
+    worksheet = gc.open_by_key('11dPpsU062I1Gcx5vruMGY_ARW9rt__X4c56_KaPQhi4').sheet1
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/spreadsheet.py", line 110, in sheet1
+    return self.get_worksheet(0)
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/spreadsheet.py", line 274, in get_worksheet
+    sheet_data = self.fetch_sheet_metadata()
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/spreadsheet.py", line 254, in fetch_sheet_metadata
+    r = self.client.request("get", url, params=params)
+  File "/home/pi/.local/lib/python3.9/site-packages/gspread/client.py", line 92, in request
+    raise APIError(response)
+gspread.exceptions.APIError: {'code': 429, 'message': "Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:214200768186'.", 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'service': 'sheets.googleapis.com', 'quota_location': 'global', 'consumer': 'projects/214200768186', 'quota_limit_value': '60', 'quota_metric': 'sheets.googleapis.com/read_requests', 'quota_limit': 'ReadRequestsPerMinutePerUser'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quota#requesting_higher_quota'}]}]}
+Traceback (most recent call last):
+  File "/home/pi/switchbot/homeControl/main.py", line 20, in <module>
+    temp=ther.temp()
+  File "/home/pi/switchbot/homeControl/thermometer.py", line 14, in temp
+    data = res.json()
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 900, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
