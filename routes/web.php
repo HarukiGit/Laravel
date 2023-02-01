@@ -26,4 +26,5 @@ Route::get('/pythonTest', [\App\Http\Controllers\python\python_test::class,'test
 Route::get('/diary', \App\Http\Controllers\diary\home\IndexController::class)->name('home');
 
 Route::get('/diary/write', \App\Http\Controllers\diary\write\IndexController::class)->name('write');
-Route::post('/diary/write/c', \App\Http\Controllers\diary\write\CreateController::class)->name('create');
+Route::post('/diary/write/create', \App\Http\Controllers\diary\write\CreateController::class)->name('create');
+Route::post('/diary/write/create/image', \App\Http\Controllers\diary\write\UploadController::class)->name('create.image');

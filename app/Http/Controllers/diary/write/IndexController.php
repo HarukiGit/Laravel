@@ -15,6 +15,7 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('diary.write');
+        
+        return view('diary.write')->with('image_path',request('image_path'));
     }
 }

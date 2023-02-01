@@ -17,7 +17,8 @@ class CreateController extends Controller
     public function __invoke(Request $request)
     {
         $diary=new Diary;
-        $diary->text=$request->input('text');
+        $diary->text=$request->input('test');
+        $diary->image='null';
         $diary->save();
         return redirect()->route('write');
     }
