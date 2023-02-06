@@ -13,9 +13,9 @@
         <textarea id="message" name="text"></textarea>
         <input type="submit" value="保存">
     </form>
-    <form method="POST" action={{route('create.image')}} enctype="multipart/form-data">
+    <form method="POST" action={{route('create.image')}} enctype="multipart/form-data" >
         @csrf
-        <input type="file" name="image">
+        <input type="file" name="image" accept="image/*">
         <button>アップロード</button>
     </form>
 

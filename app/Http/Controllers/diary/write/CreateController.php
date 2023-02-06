@@ -17,8 +17,12 @@ class CreateController extends Controller
     public function __invoke(Request $request)
     {
         $diary=new Diary;
-        $diary->text=$request->input('test');
-        $diary->image='null';
+        $diary->text=$request->input('text');
+        if($request->image_path=='画像が選択されていません'){
+            $diary->image=null;
+        }else{
+            $diary->image=$request->image_path;
+        }
         $diary->save();
         return redirect()->route('write');
     }

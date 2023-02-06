@@ -19,14 +19,19 @@ class UploadController extends Controller
         $dir = 'image';
 
         // アップロードされたファイル名を取得
-        $file_name = $request->file('image')->getClientOriginalName();
+        if($request->file('image')==null){
+            $image_path = '画像が選択されていません';
+        }else{
+            $file_name = $request->file('image')->getClientOriginalName();
+            // 取得したファイル名で保存
+            $request->file('image')->storeAs('public/' . $dir, $file_name);
+            // ファイル情報をDBに保存
+            $image_name = $file_name;
+            $image_path ='storage/'. $dir . '/' . $file_name;
+        }
+        
 
-        // 取得したファイル名で保存
-        $request->file('image')->storeAs('public/' . $dir, $file_name);
-
-        // ファイル情報をDBに保存
-        $image_name = $file_name;
-        $image_path = 'storage/' . $dir . '/' . $file_name;
+        
  
         return redirect()->route('write',['image_path'=>$image_path]);
     }
