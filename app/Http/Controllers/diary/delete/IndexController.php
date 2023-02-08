@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\diary\home;
+namespace App\Http\Controllers\diary\delete;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,6 +10,12 @@ use DateTimeZone;
 
 class IndexController extends Controller
 {
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function __invoke(Request $request)
     {
         $diary=array_reverse(Diary::all()->toArray());
@@ -18,6 +24,6 @@ class IndexController extends Controller
             $t->setTimeZone(new DateTimeZone('Asia/Tokyo'));
             $diary[$i]["created_at"]=$t->format('Y-m-d H:i:s') . PHP_EOL;
         }
-        return view('diary.home')->with('diaries',$diary);
+        return view('diary.delete')->with('diaries',$diary);
     }
 }

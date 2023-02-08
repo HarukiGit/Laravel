@@ -32,10 +32,10 @@
     margin: 0;
   }
 
-  .diary img {
-    max-width: 100%;
+  img {
+    width: 500px;
     height: auto;
-    margin-top: 20px;
+    
   }
 </style>
 <style>
@@ -53,11 +53,15 @@
       @csrf
       <button type="submit">日記を書き込む</button>
     </form>
+    <form action="{{route('delete')}}" method="get">
+      @csrf
+      <button type="submit">削除</button>
+    </form>
     @foreach($diaries as $diary)
     <div style="padding: 10px; margin-bottom: 10px; border: 5px double #333333;">
-      <p>{{$diary->created_at}}</p>
-      <p>{{$diary->text}}</p>
-      <img id="{{ asset($diary->image) }}" alt=" " src="{{ asset($diary->image) }}" width="480" height="270	" >
+      <p>{{$diary['created_at']}}</p>
+      <p>{{$diary['text']}}</p>
+      <img id="{{ asset($diary['image']) }}" alt=" " src="{{ asset($diary['image']) }}"  >
     </div>
     @endforeach
 </body>

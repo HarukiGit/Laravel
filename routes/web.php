@@ -28,3 +28,6 @@ Route::get('/diary', \App\Http\Controllers\diary\home\IndexController::class)->n
 Route::get('/diary/write', \App\Http\Controllers\diary\write\IndexController::class)->name('write');
 Route::post('/diary/write/create', \App\Http\Controllers\diary\write\CreateController::class)->name('create');
 Route::post('/diary/write/create/image', \App\Http\Controllers\diary\write\UploadController::class)->name('create.image');
+
+Route::get('/diary/delete', \App\Http\Controllers\diary\delete\IndexController::class)->name('delete');
+Route::post('/diary/delete/mysql', \App\Http\Controllers\diary\delete\DeleteController::class)->name('delete.mysql');
