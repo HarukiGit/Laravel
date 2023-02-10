@@ -1,0 +1,59 @@
+body {
+    background-color: #9df0ff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form {
+    background-color: #5658dd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(5, 17, 68);
+    font-size: 18px;
+    cursor: pointer;
+    color: #FFF;
+    font-weight: bold;
+}
+
+img {
+    width: 500px;
+    height: auto;
+    border: 3px solid #ff3f3f;
+}
+
+.diaries {
+    margin: 2em 0;
+    background: #dcefff;
+    border-radius: 10px;
+}
+
+.diaries .date {
+    font-size: 1.2em;
+    background: #5fb3f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 10px;
+}
+
+.diaries p {
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.button {
+    display: inline-block;
+    margin: 0 10px;
+}
