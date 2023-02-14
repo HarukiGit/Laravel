@@ -20,11 +20,11 @@
         </form>
     </div>
     @foreach ($diaries as $diary)
-        <div class="diaries">
-            <div class="date">{{ $diary['created_at'] }}</div>
-            <p>{{ $diary['text'] }}</p>
-            <img id="{{ asset($diary['image']) }}" alt=" " src="{{ asset($diary['image']) }}">
-        </div>
+    <div class="diaries">
+        <div class="date">{{ $diary['created_at'] }}</div>
+        <p>{{ $diary['text'] }}</p>
+        <img id="{{ asset($diary['image']) }}" alt=" " src="{{ asset($diary['image']) }}">
+    </div>
     @endforeach
 </body>
 
